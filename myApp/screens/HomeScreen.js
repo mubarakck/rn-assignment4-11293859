@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, View, Text, Image, StyleSheet, TextInput  } from "react-native";
+import { ScrollView, View, Text, Image, StyleSheet, TextInput, TouchableOpacity  } from "react-native";
 
 export default function HomeScreen ({ route }) {
 const { name, email } = route.params;
@@ -13,11 +13,9 @@ const { name, email } = route.params;
 <View style={ styles.head}>    
         <Text style={styles.name}>{name}</Text> 
         <Text style={styles.email}>{email}</Text>
-</View>
-        
+</View>       
         <Image source={require('../assets/user.png')} style={styles.user} /> 
-      
-      </View>
+ </View>
 
       
       
@@ -33,6 +31,35 @@ const { name, email } = route.params;
         />
        <Image source={require('../assets/filter.png')} style={styles.searchIcon} />
       </View>
+
+
+<View style={styles.title}>
+      <Text style={styles.sectionTitle}>Featured Jobs</Text>
+      <TouchableOpacity>
+      <Text style={styles.seeAll}>See all</Text>
+      </TouchableOpacity>
+      </View>
+
+
+      <View>
+      <ScrollView horizontal={true} style={styles.categories} showsHorizontalScrollIndicator={false}>
+
+        </ScrollView>
+        </View>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
      
     </ScrollView>
@@ -53,18 +80,18 @@ const styles = StyleSheet.create({
     head:{
       flexDirection: 'column',
     },
-    user: {
-      flexDirection: 'row',
-      
+    user: {   
+      alignContent:'flex-end',
+      marginLeft: 120,
     },
     name: {
       fontSize: 24,
       fontWeight: 'bold',
-      color: '#000',
+      color: '#0D0D26',
     },
     email: {
       fontSize: 18,
-      color: 'gray',
+      color: '#95969D',
       flex: 1,
       marginTop: 0,
     },
@@ -75,6 +102,8 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       alignItems: 'center',
       margin: 20,
+      height: 48,
+      width: 370,
       padding: 10,
       backgroundColor: '#f0f0f0',
       borderRadius: 20,
@@ -89,4 +118,18 @@ const styles = StyleSheet.create({
       height: 20,
       marginRight: 10,
     },
+    sectionTitle: {
+      fontSize: 16,
+      fontWeight: 'bold',
+      marginLeft:20,
+    },
+    title:{
+      flexDirection: 'row',
+      marginTop: 20,
+    },
+    seeAll:{
+      marginLeft:180,
+      color: '#95969D',
+    }
+
    });
