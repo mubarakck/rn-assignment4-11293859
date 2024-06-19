@@ -4,21 +4,23 @@ import { ScrollView, View, Text, Image, StyleSheet, TextInput  } from "react-nat
 export default function HomeScreen ({ route }) {
 const { name, email } = route.params;
     return (
+
+
         <ScrollView style={styles.container}>
 
 
-
-        <Text style={styles.name}>{name}</Text>  
-        <View style={ styles.header}>           
+<View style={ styles.header}>       
+<View style={ styles.head}>    
+        <Text style={styles.name}>{name}</Text> 
+        <Text style={styles.email}>{email}</Text>
+</View>
         
-       
-      <Text style={styles.email}>{email}</Text>
-      <Image source={require('../assets/user.png')} style={styles.user} />
+        <Image source={require('../assets/user.png')} style={styles.user} /> 
+      
       </View>
 
       
       
-
 
 
 
@@ -32,23 +34,7 @@ const { name, email } = route.params;
        <Image source={require('../assets/filter.png')} style={styles.searchIcon} />
       </View>
 
-      <Text style={styles.sectionTitle}>Featured Jobs</Text>
-      <View style={styles.jobCard}>
-      <Image source={require('../assets/facebooklogo.png')} style={styles.logo} />
-        <Text style={styles.jobTitle}>Software {"\n"} Engineer</Text> 
-        <Text style={styles.jobCompany}>Facebook</Text>
-        <Text style={styles.jobLocation}>Accra, Ghana</Text>
-        <Text style={styles.jobSalary}>$180,000</Text>
-      </View>
-
-      <Text style={styles.sectionTitle}>Popular Jobs</Text>
-      <View style={styles.jobCard}>
-        <Image source={{ uri: 'burgerking' }} style={styles.logo} />
-        <Text style={styles.jobTitle}>Jr Executive</Text>
-        <Text style={styles.jobCompany}>Burger King</Text>
-        <Text style={styles.jobLocation}>Los Angeles, US</Text>
-        <Text style={styles.jobSalary}>$96,000/y</Text>
-      </View>
+     
     </ScrollView>
   );
 }
@@ -60,25 +46,21 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
     },
     header: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        padding: 20,
-        backgroundColor: '#fff',
+      padding: 20,
+      marginTop: 70,
+      flexDirection: 'row',
     },
-    user: {   
-       flexDirection: 'row',
-       marginTop: 30,
-       width: 40,
-       height: 40,
-       borderRadius: 20, 
+    head:{
+      flexDirection: 'column',
+    },
+    user: {
+      flexDirection: 'row',
+      
     },
     name: {
       fontSize: 24,
       fontWeight: 'bold',
       color: '#000',
-      
-      marginTop: 70,
-      padding: 20,
     },
     email: {
       fontSize: 18,
@@ -86,8 +68,6 @@ const styles = StyleSheet.create({
       flex: 1,
       marginTop: 0,
     },
-
-
 
 
 
@@ -109,41 +89,4 @@ const styles = StyleSheet.create({
       height: 20,
       marginRight: 10,
     },
-    sectionTitle: {
-      fontSize: 20,
-      fontWeight: 'bold',
-      marginLeft: 20,
-      marginTop: 10,
-    },
-    jobCard: {
-      backgroundColor: 'lightblue',
-      padding: 20,
-      margin: 20,
-      borderRadius: 10,
-      flexDirection: 'row',
-      alignItems: 'center',
-    },
-    logo: {
-      width: 50,
-      height: 50,
-      resizeMode: 'contain',
-      marginRight: 10,
-    },
-    jobTitle: {
-      fontSize: 18,
-      fontWeight: 'bold',
-    },
-    jobCompany: {
-      fontSize: 16,
-      color: 'gray',
-    },
-    jobLocation: {
-      fontSize: 14,
-      color: 'gray',
-    },
-    jobSalary: {
-      fontSize: 16,
-      fontWeight: 'bold',
-      color: 'green',
-    },
-  });
+   });
