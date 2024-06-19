@@ -32,7 +32,7 @@ const { name, email } = route.params;
        <Image source={require('../assets/filter.png')} style={styles.searchIcon} />
       </View>
 
-      <Text style={styles.sectionTitle}>Featured Job</Text>
+      <Text style={styles.sectionTitle}>Featured Jobs</Text>
       <View style={styles.jobCard}>
       <Image source={require('../assets/facebooklogo.png')} style={styles.logo} />
         <Text style={styles.jobTitle}>Software {"\n"} Engineer</Text> 
