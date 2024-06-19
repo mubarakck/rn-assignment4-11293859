@@ -6,7 +6,7 @@ export default function Login({ navigation }) {
     const [email, setEmail] = useState('');
 
 const handleLogin = () => {
-    navigation.navigate('Home', { name, email });
+    navigation.navigate('HomeScreen', { name, email });
 };
 
 
@@ -20,12 +20,13 @@ const handleLogin = () => {
       <TextInput style={styles.input} placeholder="Email" value={email} onChangeText={setEmail} />
       
       
-      <TouchableOpacity style={styles.button}>
-        
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+
         <Button  
+        color="white"
         title="Log in"
          onPress={() =>
-          navigation.navigate("HomeScreen", {name: 'name'})
+          navigation.navigate("HomeScreen", {Name: 'setName'}, { email: 'setEmail' })
         }
           />
       </TouchableOpacity>
