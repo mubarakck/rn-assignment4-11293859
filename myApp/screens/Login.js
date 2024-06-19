@@ -1,21 +1,33 @@
 import { useState} from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Button, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 
-export default function Login() {
+export default function Login({ navigation }) {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+
+const handleLogin = () => {
+    navigation.navigate('Home', { name, email });
+};
 
 
-
-    
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Jobizz</Text>
       <Text style={styles.welcome}>Welcome Back 👋</Text>
       <Text style={styles.subtitle}>Let's log in. Apply to jobs!</Text>
 
-      <TextInput style={styles.input} placeholder="Name" />
-      <TextInput style={styles.input} placeholder="Email" />
+      <TextInput style={styles.input} placeholder="Name" value={name} onChangeText={setName}/>
+      <TextInput style={styles.input} placeholder="Email" value={email} onChangeText={setEmail} />
+      
+      
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Log in</Text>
+        
+        <Button  
+        title="Log in"
+         onPress={() =>
+          navigation.navigate("HomeScreen", {name: 'name'})
+        }
+          />
       </TouchableOpacity>
 
       <View style={styles.dividerContainer}>

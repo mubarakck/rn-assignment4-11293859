@@ -1,10 +1,13 @@
+import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-export default function Login () {
+export default function HomeScreen ({ route }) {
+const { name, email } = route.params;
     return (
-        <View style={styles.container}>
-      <Text styles={styles.text}>Open up App.js to start working on your Login Screen!</Text>
-      </View>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Welcome, {name}!</Text>
+      <Text>Your email is {email}</Text>
+    </View>
   );  
 };
 
