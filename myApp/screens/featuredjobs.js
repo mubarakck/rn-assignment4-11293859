@@ -1,80 +1,74 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 
 // JobCard Component
-const JobCard = ({ logoUrl, jobTitle, companyName, salary, location }) => {
+const Featuredjobs = ({ logo, jobTitle, companyName, salary, location, backgroundColor  }) => {
   return (
-    <View style={styles.card}>
-      <View style={styles.logoContainer}>
-        <Image source={{ uri: logoUrl }} style={styles.logo} />
+        <View style={[styles.card1, { backgroundColor: backgroundColor }]}>
+            <View style={styles.innerText}>
+                 <Image source={logo} style={styles.jobIcons} />
+            
+                       <View style={styles.bothText}>
+                          <Text style={styles.firstText}>{jobTitle}</Text>
+                            <Text style={styles.secondText}>{companyName}</Text>
+                        </View>
+         </View>
+
+            <View style={styles.bottomTextView}>
+                        <Text style={styles.bottomTextText1}>{salary}</Text>
+                        <Text style={styles.bottomTextText2}>{location}</Text>
+            </View>
       </View>
-      <View style={styles.infoContainer}>
-        <Text style={styles.jobTitle}>{jobTitle}</Text>
-        <Text style={styles.companyName}>{companyName}</Text>
-        <Text style={styles.salary}>{salary}</Text>
-        <Text style={styles.location}>{location}</Text>
-      </View>
-    </View>
+   
   );
 };
 
-// HomeScreen Component
-const featuredjobs = () => {
-  return (
-    <ScrollView style={styles.container}>
-      <JobCard
-        logoUrl="facebook_logo_url"
-        jobTitle="Software Engineer"
-        companyName="Facebook"
-        salary="$180,000"
-        location="Accra, Ghana"
-      />
-      {/* You can add more JobCard components here with different props */}
-    </ScrollView>
-  );
-};
+
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f0f0f0',
-  },
-  card: {
-    backgroundColor: '#4267B2', // Facebook blue
-    borderRadius: 10,
-    padding: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
-    margin: 10,
-  },
-  logoContainer: {
-    marginRight: 10,
-  },
-  logo: {
-    width: 50,
-    height: 50,
-  },
-  infoContainer: {
-    flex: 1,
-  },
-  jobTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-  },
-  companyName: {
-    fontSize: 16,
-    color: '#FFFFFF',
-  },
-  salary: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-  },
-  location: {
-    fontSize: 14,
-    color: '#FFFFFF',
-  },
-});
-
-export default featuredjobs;
+    card1: {
+      //backgroundColor: '#5386E4', // Facebook blue
+      borderRadius: 30,
+      padding: 20,
+      margin: 10,
+      height: 186,
+      marginLeft:24,
+      width: 320,
+    },
+    jobIcons:{
+      backgroundColor: 'white',
+      height: 45,
+      width: 45,
+      borderRadius: 10,
+    },
+    innerText:{
+      flexDirection: 'row',
+    },
+    bothText:{
+      marginLeft: 20,
+      flexDirection: 'column',
+    },
+    firstText:{
+      color:"white",
+      fontWeight: '600',
+    },
+    secondText:{
+      color:"white",
+      fontWeight: '400',
+    },
+    bottomTextView:{
+      marginTop: 80,
+      flexDirection:'row',
+    },
+    bottomTextText1:{
+  color:'white',
+  marginRight:90,
+    },
+    bottomTextText2:{
+      color:'white',
+    },
+  
+   
+    
+  });
+export default Featuredjobs;
