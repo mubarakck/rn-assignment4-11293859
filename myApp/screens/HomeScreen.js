@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollView, View, Text, Image, StyleSheet, TextInput, TouchableOpacity  } from "react-native";
 import Featuredjobs from "./Featuredjobs";
-//import Popularjobs from "./Popularjobs";
+import Popularjobs from "./Popularjobs";
 import facebooklogo from "../assets/facebooklogo.png";
 import googlelogo from "../assets/googlelogo.png";
 import burgerking from "../assets/burgerking.png";
@@ -137,7 +137,65 @@ const { name, email } = route.params;
           </TouchableOpacity>
       </View>
  
-  
+      <View style={styles.container}>
+            <Popularjobs
+                logo={burgerking}
+                jobTitle="Jr Executive"
+                companyName="Burger King"
+                salary="$96,000/y"
+                location="Los Angeles, US"
+            />
+            <Popularjobs
+                logo={beats}
+                jobTitle="Sales Manager"
+                companyName="Beats"
+                salary="$110,000/y"
+                location="New York, US"
+            />
+            <Popularjobs
+                logo={burgerking}
+                jobTitle="Cybersec Analyst"
+                companyName="Burger King"
+                salary="$380,000/y"
+                location="Bucharest"
+            />
+            <Popularjobs
+                logo={beats}
+                jobTitle="Sound Engineer"
+                companyName="beats"
+                salary="$500,000/y"
+                location="Miami, USA"
+            />
+            <Popularjobs
+                logo={yango}
+                jobTitle="Backend Engineer"
+                companyName="Yango"
+                salary="$180,000/y"
+                location="Accra, Gh"
+            />
+            <Popularjobs
+                logo={oracle}
+                jobTitle="DatabaseManager"
+                companyName="oracle"
+                salary="$580,000/y"
+                location="Peru, Para"
+            />
+            <Popularjobs
+                logo={meta}
+                jobTitle="Systems Admin"
+                companyName="meta AI"
+                salary="$280,000/y"
+                location="Konongo, Zon"
+            />
+            <Popularjobs
+                logo={hp}
+                jobTitle="Senior Tester"
+                companyName="Hewlett Packard"
+                salary="$88,000/y"
+                location="Toronto Canada"
+            />
+
+        </View>
 
 
 
@@ -171,7 +229,7 @@ const styles = StyleSheet.create({
     },
     user: {   
       alignContent:'flex-end',
-      marginLeft: 220,
+      marginLeft: 60,
     },
     name: {
       fontSize: 24,
@@ -191,7 +249,7 @@ const styles = StyleSheet.create({
       backgroundColor: 'red',
       position: 'absolute',
       right: 10,
-      top: 10,
+      top: 25,
     },
 
 

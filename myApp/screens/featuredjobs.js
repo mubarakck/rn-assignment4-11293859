@@ -4,7 +4,7 @@ import { View, Text, Image, StyleSheet } from "react-native";
 // JobCard Component
 const Featuredjobs = ({ logo, jobTitle, companyName, salary, location, backgroundColor  }) => {
   return (
-        <View style={[styles.card1, { backgroundColor: backgroundColor }]}>
+        <View style={[styles.card, { backgroundColor: backgroundColor }]}>
             <View style={styles.innerText}>
                  <Image source={logo} style={styles.jobIcons} />
             
@@ -26,8 +26,7 @@ const Featuredjobs = ({ logo, jobTitle, companyName, salary, location, backgroun
 
 
 const styles = StyleSheet.create({
-    card1: {
-      //backgroundColor: '#5386E4', // Facebook blue
+    card: {
       borderRadius: 30,
       padding: 20,
       margin: 10,
