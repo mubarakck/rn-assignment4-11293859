@@ -1,7 +1,11 @@
-import React from 'react';
+import { useState} from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 
 export default function Login() {
+
+
+
+    
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Jobizz</Text>
@@ -20,22 +24,35 @@ export default function Login() {
         <View style={styles.divider} />
       </View>
 
+
+
+
+
+
       <View style={styles.socialButtons}>
-        <TouchableOpacity style={styles.socialButton}>
+        <TouchableOpacity style={styles.socialButton1}>
           <Image source={require('../assets/applelogo.png')} style={styles.logo} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.socialButton}>
+        <TouchableOpacity style={styles.socialButton2}>
           <Image source={require('../assets/googlelogo.png')} style={styles.logo} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.socialButton}>
+        <TouchableOpacity style={styles.socialButton3}>
           <Image source={require('../assets/facebooklogo.png')} style={styles.logo} />
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity>
-        <Text>Haven't an account? </Text>
-        <Text style={styles.registerText}>Register</Text>
+
+
+      <View style={styles.registerContainer}>
+        <Text>Haven't an account?</Text>
+      <TouchableOpacity> 
+        <Text style={styles.registerText}>
+             Register
+        </Text>
       </TouchableOpacity>
+      </View>
+
+      
     </View>
   );
 }
@@ -45,23 +62,26 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#FAFAFD',
     padding: 20,
   },
   title: {
-    fontSize: 32,
+    fontSize: 25,
     fontWeight: 'bold',
-    marginBottom: 8,
+    height: 56,
+    marginRight: 250,
     color: '#356899',
   },
   welcome: {
     fontSize: 28,
     fontWeight: '600',
-    marginBottom: 8,
+    marginRight: 90,
+    marginBottom: 10,
   },
   subtitle: {
     fontSize: 16,
     color: '#666',
+    marginRight: 140,
     marginBottom: 20,
   },
   input: {
@@ -71,16 +91,17 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ddd',
     padding: 10,
-    borderRadius: 5,
+    borderRadius: 15,
   },
   button: {
     width: '100%',
-    height: 50,
-    backgroundColor: '#007BFF',
+    height: 56,
+    backgroundColor: '#356899',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 5,
-    marginBottom: 20,
+    marginTop: 15,
+    marginBottom: 60,
   },
   buttonText: {
     color: 'white',
@@ -101,20 +122,32 @@ const styles = StyleSheet.create({
   orText: {
     marginHorizontal: 10,
     color: '#666',
+    marginBottom: 20,
   },
   socialButtons: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     width: '100%',
-    marginBottom: 20,
+    marginBottom: 40,
   },
-  socialButton: {
+  socialButton1: {
+    padding: 10,
+  },
+  socialButton2: {
+    padding: 10,
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  socialButton3: {
     padding: 10,
   },
   logo: {
     width: 30,
     height: 30,
-  },
+     },
+     registerContainer:{
+        flexDirection: 'row',
+     },
   registerText: {
     color: '#007BFF',
   },
